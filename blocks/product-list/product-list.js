@@ -1,5 +1,5 @@
 // Function to initialize the component and make the HTTP request
-function initProductListComponents() {
+async function initProductListComponents() {
   // Select all div elements with the class 'product-list-container'
   const divs = document.querySelectorAll('.product-list-container');
 
@@ -14,7 +14,7 @@ function initProductListComponents() {
                              <a href="${`plp?product=${product.name}`}" aria-label="View details for ${product.name}">
                               <img src="${`https://placehold.jp/400x400.png`}" alt="${product.altText}">
                                <h2>${product.name}</h2>
-                              <div class="product-description">${product.description.html}</div>
+                              <div class="product-description">${product.description}</div>
                               </a>
                           </div>
                       `;
@@ -25,21 +25,14 @@ function initProductListComponents() {
 
     const { apiurl } = div.dataset;
     // Extract data attributes from the div
-    const fetchAndDisplayProducts = (page = 1) => {
+    const fetchAndDisplayProducts = async (page = 1) => {
 
-    await fetch(apiurl)
-               .then((res) => {
-                   if (!res.ok) {
-                       throw new Error
-                           (`HTTP error! Status: ${res.status}`);
-                   }
-                    await createProductList(res.json.data);
-               })
-               .then((data) => 
-                     console.log(data))
-               .catch((error) => 
-                      console.error("Unable to fetch data:", error));
-       }
+    const resp = await fetch(apiurl);
+    const jsono = await resp.json();
+    createProductList(jsono.data);
+      
+    
+    }
     fetchAndDisplayProducts();
   });
 }
