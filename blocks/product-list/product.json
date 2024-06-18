@@ -1,0 +1,33 @@
+{
+  "data": {
+    "products": {
+      "items": [{
+      "altText": "Chicken Stock Cubes",
+        "description": {
+          "html": "Next time you cook chicken, try adding a Knorr Chicken Stock Cube. Made with carefully selected herbs and spices, it will enhance the natural flavour of your fresh ingredients. For a tasty twist, add to soups, stews, risottos and more."
+        },
+        "name": "Chicken Stock Cubes"
+      }, {
+        "altText": "Beef Stock cubes 8pack",
+        "description": {
+          "html": "Discover our beef stock cube. Created with carefully selected herbs and spices, they are perfect to enhance the natural flavours of your dishes."
+        },
+        "name": "Beef Stock cubes 8pack"
+      }, {
+      "altText": "Ham Stock Cubes",
+        "description": {
+          "html": "Enhance a range of dishes - from ham hock risotto to ham broth and even minestrone soup - simply by adding a Knorr Ham Stock Cube to your cooking."
+        },
+        "name": "Ham Stock Cubes"
+        
+      }, {
+      "altText": "Vegetable Stock Cubes",
+        "description": {
+          "html": "Enhance a variety of dishes - from soups and pastas to gravy and sauces - simply by adding a Knorr Vegetable Stock Cube to your cooking. Made with carefully selected herbs and spices, vegetable stock cubes perfectly complement the natural flavours of your veggies."
+        },
+        "name": "Vegetable Stock Cubes"
+      }
+      }]
+    }
+  }
+}
