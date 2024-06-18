@@ -11,7 +11,7 @@ function initProductListComponents() {
       products.forEach((product) => {
         productListHTML += `
                           <div class="product-item">
-                             <a href="${`pdp?product=${product.sku}`}" aria-label="View details for ${product.name}">
+                             <a href="${`plp?product=${product.name}`}" aria-label="View details for ${product.name}">
                               <img src="${`https://placehold.jp/400x400.png`}" alt="${product.altText}">
                                <h2>${product.name}</h2>
                               <div class="product-description">${product.description.html}</div>
@@ -23,17 +23,17 @@ function initProductListComponents() {
       div.querySelector('.product-list').innerHTML += productListHTML;
     }
 
-    const { size, apiurl, store } = div.dataset;
+    const { apiurl } = div.dataset;
     // Extract data attributes from the div
     const fetchAndDisplayProducts = (page = 1) => {
 
-    fetch("./product.json")
+    fetch(apiurl)
                .then((res) => {
                    if (!res.ok) {
                        throw new Error
                            (`HTTP error! Status: ${res.status}`);
                    }
-                    createProductList(res.data.products.items);
+                    createProductList(res.json.data);
                })
                .then((data) => 
                      console.log(data))
