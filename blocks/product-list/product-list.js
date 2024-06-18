@@ -27,13 +27,13 @@ function initProductListComponents() {
     // Extract data attributes from the div
     const fetchAndDisplayProducts = (page = 1) => {
 
-    fetch(apiurl)
+    await fetch(apiurl)
                .then((res) => {
                    if (!res.ok) {
                        throw new Error
                            (`HTTP error! Status: ${res.status}`);
                    }
-                    createProductList(res.json.data);
+                    await createProductList(res.json.data);
                })
                .then((data) => 
                      console.log(data))
