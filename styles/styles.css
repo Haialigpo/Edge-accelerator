@@ -63,7 +63,7 @@
   }
 }
 
-:root .theme-knorr {
+:root .theme-green {
   --link-color: #000;
   --primary-text-color: #007a33;
   --secondary-text-color: #fff;
@@ -79,7 +79,7 @@
   --tab-color-grey:#757575;
 }
 
-:root .theme-tresemme {
+:root .theme-black {
   --link-color: #000;
   --primary-text-color: #000;
   --secondary-text-color: #fff;
